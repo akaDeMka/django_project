@@ -1,0 +1,5 @@
+<ul>
+    {% for genre in genre_list %}
+        <li><a href="{% url 'genre:Edit Genre' genre.id %}">{{genre.name}}</a></li>
+    {% endfor %}
+</ul>
