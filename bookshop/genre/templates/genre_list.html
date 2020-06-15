@@ -1,0 +1,15 @@
+<table>
+    <th>ID</th>
+    <th>Название</th>
+    <th>Операции</th>
+    {% for genre in object_list %}
+        <tr>
+            <td>{{genre.id}}</td>
+            <td><a href="{% url 'genre:Edit Genre' genre.id %}">{{genre.name}}</a></td>
+            <td><a href="{% url 'genre:Edit Genre' genre.id %}">Редактировать</a> 
+                <a href="{% url 'genre:Delete Genre' genre.id %}">Удалить</a></td>
+        </tr>
+    {% empty %}
+        <tr>Нет жанров.</tr>
+    {% endfor %}
+</table>
