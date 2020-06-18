@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from .views import ViewSite
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('genre/', include('genre.urls')),
+    path('', ViewSite.as_view()),
 ]

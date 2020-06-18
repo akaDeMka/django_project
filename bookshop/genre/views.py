@@ -1,10 +1,8 @@
-from django.views.generic import CreateView, UpdateView, DeleteView
-from django.views.generic.list import ListView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 
 from .forms import CreateGenreForm
 from .models import Genre
-
-# Create your views here.
+#from .urls import urlpatterns
 class CreateGenre(CreateView):
     template_name = 'genre_edit.html'
     model = Genre
