@@ -26,7 +26,7 @@ SECRET_KEY = '34egs8*i5)b5^1=ek9naq_gkxf_58qli&kxmkm4^hn%j7#9)4d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['akademka.pythonanywhere.com']
+ALLOWED_HOSTS = ['akademka.pythonanywhere.com', '127.0.0.1']
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
