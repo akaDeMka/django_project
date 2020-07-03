@@ -16,7 +16,7 @@
         {% for obj in object_list %}
             <tr>
                 <td scope="row">{{obj.id}}</td>
-                <td><a href="{% url 'genre:edit' obj.pk %}">{{obj.name}}</a></td>
+                <td><a href="{% url 'genre:detail' obj.pk %}">{{obj.name}}</a></td>
                 <td><a href="{% url 'genre:edit' obj.pk %}"><i class="fas fa-edit"></i> Редактировать</a><br> 
                     <a href="{% url 'genre:delete' obj.pk %}"><i class="fas fa-trash-alt"></i> Удалить</a></td>
             </tr>

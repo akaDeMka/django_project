@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, UpdateView, ListView, DeleteView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView
 from django.urls import reverse_lazy
 
 from .forms import CreateGenreForm
@@ -21,4 +21,9 @@ class DeleteGenre(DeleteView):
     success_url = reverse_lazy("genre:list")
     model = Genre
     template_name = 'genre_delete.html'
+class DetailGenre(DetailView):
+    template_name = 'genre_detail.html'
+    model = Genre
+    success_url = reverse_lazy("genre:list")
+    form_class = CreateGenreForm
     

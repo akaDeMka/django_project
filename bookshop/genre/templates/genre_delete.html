@@ -8,5 +8,7 @@
     <p>Вы действительно хотите удалить жанр "{{ object }}"?</p>
     <button type="submit" class="btn btn-danger">Удалить</button>
 </form>
+<br>
+<p><a href="{% url 'genre:list' %}" class="btn btn-success">Назад</a></p>
 </div>
 {%endblock%}
