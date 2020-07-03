@@ -1,13 +1,13 @@
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
+from django.urls import reverse_lazy
 
 from .forms import CreateGenreForm
 from .models import Genre
-#from .urls import urlpatterns
 class CreateGenre(CreateView):
     template_name = 'genre_edit.html'
     model = Genre
     form_class = CreateGenreForm
-    success_url = "/genre"
+    success_url = reverse_lazy("genre:list")
 class ViewGenres(ListView):
     template_name = 'genre_list.html'
     model = Genre
@@ -15,10 +15,10 @@ class ViewGenres(ListView):
 class EditGenre(UpdateView):
     template_name = 'genre_edit.html'
     model = Genre
-    success_url = "/genre"
+    success_url = reverse_lazy("genre:list")
     form_class = CreateGenreForm
 class DeleteGenre(DeleteView):
-    success_url = "/genre"
+    success_url = reverse_lazy("genre:list")
     model = Genre
     template_name = 'genre_delete.html'
     
