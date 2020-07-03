@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block  title %}Удалить жанр{% endblock  %}
 {% block content %}
+<div class ='container'>
 <form method="post">
 {% csrf_token %}
     <p>Вы действительно хотите удалить жанр "{{ object }}"?</p>
     <button type="submit" class="btn btn-danger">Удалить</button>
 </form>
+</div>
 {%endblock%}

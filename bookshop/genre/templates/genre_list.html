@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
-{% block  title %}Редактировать Жанр{% endblock  %}
+{% block  title %}Редактировать Жанр{% endblock %}
 {% block content %}
+<div class ='container'>
 <a href="{% url 'genre:create' %}"><button type="button" class="btn btn-success">Cоздать</button></a>
 <table class= "table table-striped table-sm">
     <thead class="thead-dark">
@@ -23,4 +24,5 @@
         {% endfor %}
     </tbody>
 </table>
-{%endblock%}
+</div>
+{% endblock %}
