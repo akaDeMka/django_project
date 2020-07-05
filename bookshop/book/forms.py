@@ -13,5 +13,8 @@ class CreateBookForm (forms.ModelForm):
             'binding',
             'isbn',
             'weight',
-            'age_rating'
+            'age_rating',
+            'quantity',
+            'active',
+            'rating'
        )
