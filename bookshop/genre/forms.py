@@ -8,7 +8,8 @@ class CreateGenreForm (forms.ModelForm):
             'name',
             'description'
         )
-        widgets = {
-            'name' : forms.TextInput(attrs={'class' : 'form-control'}),
-            'description' : forms.Textarea(attrs={'class' : 'form-control'}),
-        }
+        # Не актуально при наличии crispy
+        #widgets = {
+        #    'name' : forms.TextInput(attrs={'class' : 'form-control'}),
+        #    'description' : forms.Textarea(attrs={'class' : 'form-control'}),
+        #}

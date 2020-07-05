@@ -20,6 +20,7 @@ from .views import ViewSite
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('genre/', include('genre.urls',namespace='genre')),
+    path('genres/', include('genre.urls',namespace='genre')),
+    path('books/', include('book.urls',namespace='book')),
     path('', ViewSite.as_view()),
 ]

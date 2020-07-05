@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block  title %}О жанре{% endblock %}
+{% block content %}
+<div class='container'>
+<h1> {{ object }}</h1>
+    <p class="blockquote">{{object.description}}</p>
+    <p><a href="{% url 'book:list' %}" class="btn btn-success">Назад</a></p>
+</div>
+{% endblock %}
