@@ -1,31 +1,31 @@
 from django.db import models
-from django.utils import timezone
+from datetime import datetime
+from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 class Book(models.Model):
     name=models.CharField(max_length=100, verbose_name="Название книги")
+    #author=models.CharField(max_length=100, verbose_name="Автор")
     description=models.TextField (blank=True, null=True, verbose_name="Описание книги")
+    translater=models.CharField(max_length=100, blank=True, null=True, verbose_name="Переводчик")
     
     price=models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена (BYN)")
-    date_pub=models.DateField(blank=True, null=True, verbose_name="Год издания")
-    pages=models.IntegerField(blank=True, null=True, verbose_name="Страниц")
+    year = models.PositiveIntegerField(
+               validators=[
+                   MinValueValidator(1900), 
+                   MaxValueValidator(datetime.now().year)],
+               help_text="Use the following format: <YYYY>", blank=True, null=True, verbose_name="Год издания")
+    
+    pages=models.PositiveIntegerField(blank=True, null=True, verbose_name="Страниц")
     binding=models.CharField(blank=True, null=True, max_length=100, verbose_name="Переплет")
     isbn=models.CharField(blank=True, null=True, unique=True, max_length=17, verbose_name='ISBN')
-    weight=models.IntegerField(blank=True, null=True, verbose_name="Вес (гр)")
-    age_rating=models.IntegerField(blank=True, null=True, verbose_name='Возрастные ограничения')
+    weight=models.PositiveIntegerField(blank=True, null=True, verbose_name="Вес (гр)")
+    age_rating=models.PositiveIntegerField(blank=True, null=True, verbose_name='Возрастные ограничения')
 
-    quantity=models.IntegerField(default=0, verbose_name='Количество книг в наличии')
+    quantity=models.PositiveIntegerField(default=0, verbose_name='Количество книг в наличии')
     active=models.BooleanField(default=False, verbose_name="Активный (доступен для заказа, Да/Нет)")
-    rating=models.IntegerField(blank=True, null=True, verbose_name='Рейтинг (0 - 10)')
+    rating=models.PositiveIntegerField(blank=True, null=True, verbose_name='Рейтинг (0 - 10)')
     created=models.DateTimeField(auto_now_add=True, editable=False, verbose_name='Дата внесения в каталог')
     modified=models.DateTimeField(auto_now=True, editable=False, verbose_name='Дата последнего изменения')
-
-    #def save(self, *args, **kwargs):
-    #    ''' On save, update timestamps '''
-    #    if not self.id:
-    #        self.created = timezone.now()
-    #    self.modified = timezone.now()
-    #    return super(self).save(*args, **kwargs)
-    
 
     def __str__(self):
         return self.name

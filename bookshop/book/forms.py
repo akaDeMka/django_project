@@ -8,7 +8,7 @@ class CreateBookForm (forms.ModelForm):
             'name',
             'description',
             'price',
-            'date_pub',
+            'year',
             'pages',
             'binding',
             'isbn',
@@ -18,3 +18,6 @@ class CreateBookForm (forms.ModelForm):
             'active',
             'rating'
        )
+
+#class ViewBookForm (forms.Form):
+    
