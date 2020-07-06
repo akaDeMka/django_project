@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView, FormView
 from django.urls import reverse_lazy
 
 from .forms import CreateBookForm
@@ -25,5 +25,3 @@ class DetailBook(DetailView):
     template_name = 'book_detail.html'
     model = Book
     success_url = reverse_lazy("book:list")
-    form_class = CreateBookForm
-    

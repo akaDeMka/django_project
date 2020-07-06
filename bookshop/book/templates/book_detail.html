@@ -3,11 +3,11 @@
 {% block  title %}О жанре{% endblock %}
 {% block content %}
 <div class='container'>
-<h1> {{ object }}</h1>
-    <p class="blockquote">{{object.description.verbose_name}}</p>
-    <p class="blockquote">{{object.description}}</p>
-    <p class="blockquote">{{object.created}}</p>
-    <p class="blockquote">{{object.modified}}</p>
+    <h1> {{ object }}</h1>
+    <p class="description" ><h4>Описание</h4>{{object.description}}</p>
+    <p>{{object.image}}</p>
+    <p>Дата создания: {{object.created}}</p>
+    <p>Дата изменения: {{object.modified}}</p>
     <p><a href="{% url 'book:list' %}" class="btn btn-success">Назад</a></p>
 </div>
 {% endblock %}
