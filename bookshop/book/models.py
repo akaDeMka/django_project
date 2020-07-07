@@ -4,10 +4,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 class Book(models.Model):
     name=models.CharField(max_length=100, verbose_name="Название книги")
-    image = models.ImageField(upload_to='books_images', blank=True, null=True, verbose_name="Фото обложки")
+    image = models.ImageField(upload_to='books_images/', blank=True, null=True, verbose_name="Фото обложки")
     #author=models.CharField(max_length=100, verbose_name="Автор")
     description=models.TextField (blank=True, null=True, verbose_name="Описание книги")
-    translater=models.CharField(max_length=100, blank=True, null=True, verbose_name="Переводчик")
     
     price=models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена (BYN)")
     year = models.PositiveIntegerField(
@@ -16,7 +15,7 @@ class Book(models.Model):
                    MaxValueValidator(datetime.now().year)],
                help_text="Use the following format: <YYYY>", default=datetime.now().year, blank=True, null=True, verbose_name="Год издания")
     
-    pages=models.PositiveIntegerField(blank=True, null=True, verbose_name="Страниц")
+    pages=models.PositiveIntegerField(blank=True, null=True, verbose_name="Количество страниц")
     binding=models.CharField(blank=True, null=True, max_length=100, verbose_name="Переплет")
     isbn=models.CharField(blank=True, null=True, unique=True, max_length=17, verbose_name='ISBN')
     weight=models.PositiveIntegerField(blank=True, null=True, verbose_name="Вес (гр)")

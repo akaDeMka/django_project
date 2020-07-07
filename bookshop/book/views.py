@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView, FormView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView
 from django.urls import reverse_lazy
 
 from .forms import CreateBookForm
