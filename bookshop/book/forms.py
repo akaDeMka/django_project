@@ -9,6 +9,7 @@ class CreateBookForm (forms.ModelForm):
             'image',
             'description',
             'price',
+            'genres',
             'year',
             'pages',
             'binding',
