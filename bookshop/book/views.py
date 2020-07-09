@@ -25,3 +25,7 @@ class DetailBook(DetailView):
     template_name = 'book_detail.html'
     model = Book
     success_url = reverse_lazy("book:list")
+class CardBooks(ListView):
+    template_name = 'book_cards.html'
+    model = Book
+    paginate_by = 10

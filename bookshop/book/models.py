@@ -5,7 +5,7 @@ from genre.models import Genre
 # Create your models here.
 class Book(models.Model):
     name=models.CharField(max_length=100, verbose_name="Название книги")
-    image = models.ImageField(upload_to='books_images/', blank=True, null=True, verbose_name="Фото обложки")
+    image = models.ImageField(upload_to='books_images/', blank=True, null=True, verbose_name="Фото обложки", default='30478-3261.jpg')
     #author=models.CharField(max_length=100, verbose_name="Автор")
     description=models.TextField (blank=True, null=True, verbose_name="Описание книги")
     genres=models.ForeignKey('genre.Genre', on_delete=models.PROTECT)
