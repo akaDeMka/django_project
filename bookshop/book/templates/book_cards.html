@@ -15,7 +15,10 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><strong>{{obj}}</strong></li>
-                            <li class="list-group-item"><strong>{{obj.genres}}</strong></li>
+                            <li class="list-group-item"><strong>
+                                {% for genre in obj.genres.all %}
+                                    {{ genre }}
+                                {% endfor %}</strong></li>
                             <li class="list-group-item"><strong>{{obj.price}}</strong></li>
                         </ul>
                         <div class="card-body">

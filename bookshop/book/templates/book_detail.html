@@ -11,7 +11,7 @@
     <table>
         <tr>
             <td><strong>Жанр: </strong></td>
-            <td>{{object.genres}}</td>
+            <td>{% for genre in object.genres.all %}{{ genre }}, {% endfor %}</td>
         </tr>
         <tr>
             <td><strong>Год издания: </strong></td>
