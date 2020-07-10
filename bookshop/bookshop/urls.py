@@ -18,12 +18,10 @@ from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.static import static
 
-from .views import ViewHome
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('genres/', include('genre.urls',namespace='genre')),
     path('books/', include('book.urls',namespace='book')),
-    path('', ViewHome.as_view()),
-    path('carousel/', include('carousel.urls',namespace='carousel'))
+    path('', include('main.urls',namespace='main')),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Development mode

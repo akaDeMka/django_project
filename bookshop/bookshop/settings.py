@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     # My apps
     'genre',
     'book',
-    'carousel',
+    'main',
 ]
 
 MIDDLEWARE = [
