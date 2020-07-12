@@ -24,4 +24,8 @@ urlpatterns = [
     path('genres/', include('genre.urls',namespace='genre')),
     path('books/', include('book.urls',namespace='book')),
     path('', include('main.urls',namespace='main')),
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Development mode
+]  #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Development mode
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
