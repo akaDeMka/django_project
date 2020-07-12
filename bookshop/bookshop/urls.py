@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('main.urls',namespace='main')),
     path('authors/', include('author.urls',namespace='author')),
     path('series/', include('series.urls',namespace='series')),
+    path('publishers/', include('publisher.urls',namespace='publisher')),
 ]  #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Development mode
 
 if settings.DEBUG:

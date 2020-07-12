@@ -6,19 +6,23 @@ class CreateBookForm (forms.ModelForm):
         model = Book
         fields = (
             'name',
-            'image',
             'description',
+            'image',
             'price',
+            'authors',
+            'series',
             'genres',
             'year',
             'pages',
             'binding',
+            'format',
             'isbn',
             'weight',
             'age_rating',
+            'publisher',
             'quantity',
             'active',
-            'rating'
+            'rating',
        )
 
 #class ViewBookForm (forms.Form):

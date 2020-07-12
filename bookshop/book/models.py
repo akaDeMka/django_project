@@ -4,6 +4,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from genre.models import Genre
 from author.models import Author
 from series.models import Series
+from publisher.models import Publisher
 # Create your models here.
 class Book(models.Model):
     name=models.CharField(max_length=100, verbose_name="Название книги")
@@ -11,7 +12,7 @@ class Book(models.Model):
     image = models.ImageField(upload_to='books_images/', blank=True, null=True, verbose_name="Фото обложки", default='30478-3261.jpg')
     price=models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена (BYN)")
     authors=models.ManyToManyField(Author)
-    series=models.ManyToManyField(Series)
+    series=models.ManyToManyField(Series, blank=True, null=True)
     genres=models.ManyToManyField(Genre)
     year = models.PositiveIntegerField(
                validators=[
@@ -25,7 +26,7 @@ class Book(models.Model):
     isbn=models.CharField(blank=True, null=True, unique=True, max_length=17, verbose_name='ISBN')
     weight=models.PositiveIntegerField(blank=True, null=True, verbose_name="Вес (гр)")
     age_rating=models.PositiveIntegerField(blank=True, null=True, verbose_name='Возрастные ограничения')
-
+    publisher=models.ForeignKey(Publisher, on_delete=models.PROTECT)
     quantity=models.PositiveIntegerField(default=0, verbose_name='Количество книг в наличии')
     active=models.BooleanField(default=False, verbose_name="Активный (доступен для заказа, Да/Нет)")
     rating=models.PositiveIntegerField(blank=True, null=True, verbose_name='Рейтинг (0 - 10)')
