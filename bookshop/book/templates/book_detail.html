@@ -5,13 +5,17 @@
 <div class='container'>
     <h1> {{ object }}</h1>
     <p><img src="{{object.image.url}}" style="max-width:30%" align="left" hspace=30>
-    <h4>Описание</h4> <p>{{object.description}} <p>
-    
+    <p>{{object.description}} <p>
     <h4>Цена (BYN): {{object.price}}</h4><br>
+    <h4>{% for author in object.authors.all %}{{ author }} {% endfor %}</h4>    
     <table>
         <tr>
+            <td><strong>Серия: </strong></td>
+            <td>{% for serie in object.series.all %}{{ serie }} {% endfor %}</td>
+        </tr>
+        <tr>
             <td><strong>Жанр: </strong></td>
-            <td>{% for genre in object.genres.all %}{{ genre }}, {% endfor %}</td>
+            <td>{% for genre in object.genres.all %}{{ genre }} {% endfor %}</td>
         </tr>
         <tr>
             <td><strong>Год издания: </strong></td>
@@ -24,6 +28,10 @@
         <tr>
             <td><strong>Переплет: </strong></td>
             <td>{{object.binding}}</td>
+        </tr>
+        <tr>
+            <td><strong>Формат: </strong></td>
+            <td>{{object.format}}</td>
         </tr>
         <tr>
             <td><strong>ISBN: </strong></td>

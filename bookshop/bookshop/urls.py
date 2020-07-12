@@ -20,10 +20,12 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('s-admin/', admin.site.urls),
     path('genres/', include('genre.urls',namespace='genre')),
     path('books/', include('book.urls',namespace='book')),
     path('', include('main.urls',namespace='main')),
+    path('authors/', include('author.urls',namespace='author')),
+    path('series/', include('series.urls',namespace='series')),
 ]  #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Development mode
 
 if settings.DEBUG:

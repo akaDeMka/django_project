@@ -5,7 +5,7 @@
     <h1>Все товары</h1>
     <div class="row" >
         {% for obj in object_list %}
-            <div class="col" style="min-width:300px; max-width:33%" >
+            <div class="col" style="min-width:200px; max-width:33%" >
                 <div class="card-deck">
                     <div class="card">
                         <img class="card-img-top" src="{{obj.image.url}}" alt="{{obj}} image cap" >
@@ -14,7 +14,10 @@
                             <p class="card-text">{{obj.description | slice:":200"}}...</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>{{obj}}</strong></li>
+                            <li class="list-group-item"><strong>
+                                {% for author in obj.authors.all %}
+                                    {{ author }}
+                                {% endfor %}</strong></li>
                             <li class="list-group-item"><strong>
                                 {% for genre in obj.genres.all %}
                                     {{ genre }}
