@@ -12,7 +12,7 @@ class Book(models.Model):
     image = models.ImageField(upload_to='books_images/', blank=True, null=True, verbose_name="Фото обложки", default='30478-3261.jpg')
     price=models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена (BYN)")
     authors=models.ManyToManyField(Author)
-    series=models.ManyToManyField(Series, blank=True, null=True)
+    series=models.ForeignKey(Series, verbose_name="Серия", on_delete=models.PROTECT, blank=True, null=True)
     genres=models.ManyToManyField(Genre)
     year = models.PositiveIntegerField(
                validators=[

@@ -22,7 +22,7 @@
                                 {% for genre in obj.genres.all %}
                                     {{ genre }}
                                 {% endfor %}</strong></li>
-                            <li class="list-group-item"><strong>{{obj.price}}</strong></li>
+                            <li class="list-group-item"><strong>{{obj.price}} р.</strong></li>
                         </ul>
                         <div class="card-body">
                             <a href="{% url 'book:detail' obj.pk %}" class="card-link">Подробнее ...</a>
