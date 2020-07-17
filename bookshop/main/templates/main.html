@@ -70,10 +70,11 @@
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">{{book.name}} <br><span class="text-muted">{% for author in book.authors.all %}{{ author }} {% endfor %}</span></h2>
-                <p class="lead">{{book.description | slice:":400"}}</p>
+                <p class="lead">{{book.description | slice:":400"}}<a href="{% url 'book:detail' book.pk %}"> Читать ></a></p>
+                
             </div>
             <div class="col-md-5">
-                <a href=""><img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" style="max-width:70%;" width="500" height="500" src="{{book.image.url}}"></a>
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" style="max-width:70%;" width="500" height="500" src="{{book.image.url}}">
             </div>
         </div>
     {% endfor %}
