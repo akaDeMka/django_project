@@ -27,7 +27,8 @@ urlpatterns = [
     path('authors/', include('author.urls',namespace='author')),
     path('series/', include('series.urls',namespace='series')),
     path('publishers/', include('publisher.urls',namespace='publisher')),
-]  #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Development mode
+    path('account/', include('account.urls',namespace='account')),
+]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -17,7 +17,6 @@ class ViewMain(ListView):
         })
         return context
 
-
 class ViewStaffPage(ListView):
     template_name = 'staff_page.html'
     model=Carousel
@@ -29,7 +28,6 @@ class ViewStaffPage(ListView):
                 'You do not have the permission required to perform the '
                 'requested operation.')
             return redirect(settings.LOGIN_URL)
-        return super(ViewStaffPage, self).dispatch(request,
-            *args, **kwargs)
+        return super(ViewStaffPage, self).dispatch(request,*args, **kwargs)
 
 
