@@ -14,7 +14,7 @@ class ViewAuthors(PermissionRequiredMixin, ListView):
     permission_required = 'author.view_author'
     template_name = 'author_list.html'
     model = Author
-    paginate_by = 100
+    paginate_by = 30
 class EditAuthor(PermissionRequiredMixin,UpdateView):
     permission_required = 'author.change_author'
     template_name = 'author_edit.html'

@@ -15,7 +15,7 @@ class ViewGenres(PermissionRequiredMixin,ListView):
     permission_required = 'genre.view_genre'
     template_name = 'genre_list.html'
     model = Genre
-    paginate_by = 100
+    paginate_by = 10
 
 class EditGenre(PermissionRequiredMixin,UpdateView):
     permission_required = 'genre.change_genre'

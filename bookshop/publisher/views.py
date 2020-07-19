@@ -14,7 +14,7 @@ class ViewPublishers(PermissionRequiredMixin,ListView):
     permission_required = 'publisher.view_publisher'
     template_name = 'publisher_list.html'
     model = Publisher
-    paginate_by = 100
+    paginate_by = 30
 class EditPublisher(PermissionRequiredMixin,UpdateView):
     permission_required = 'publisher.change_publisher'
     template_name = 'publisher_edit.html'

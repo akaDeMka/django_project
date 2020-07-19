@@ -14,7 +14,7 @@ class ViewBooks(PermissionRequiredMixin, ListView):
     permission_required = 'book.view_book'
     template_name = 'book_list.html'
     model = Book
-    paginate_by = 100
+    paginate_by = 30
 class EditBook(PermissionRequiredMixin, UpdateView):
     permission_required = 'book.change_book'
     template_name = 'book_edit.html'
