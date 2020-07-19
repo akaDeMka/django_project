@@ -2,13 +2,23 @@
     <li class="nav-item active">
         <a class="nav-link" href="{% url 'book:cards' %}">Книги</a>   <!--<span class="sr-only">(current)</span>-->
     </li>
+    {% if user.is_staff %}
     <li class="nav-item active">
-        <a class="nav-link" href="{% url 'genre:list' %}">Жанры</a>
+        <a class="nav-link" href="{% url 'main:staff_page' %}">Управление</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Корзина</a>
-    </li>
-    <li class="nav-item">
+    {% endif %}
+    <li class="nav-item active">
         <a class="nav-link disabled" href="#">Контакты</a>
+    </li> 
+    <li class="nav-item active">
+        <a class="nav-link disabled" href="#">Корзина</a>
+    </li> 
+    <li class="nav-item">
+            <a class="nav-link disabled" href="#">
+            {% if user.is_anonymous %}
+                Регистрация
+            {% else %}
+                Привет, {{user}}
+        {% endif %}</a>
     </li>
 </ul>

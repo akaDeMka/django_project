@@ -46,22 +46,26 @@
         <tr>
             <td><strong>Издательство: </strong></td><td>{{object.publisher}}</td>
         </tr>
+        {% if user.is_staff %}
         <tr>
             <td><strong>Количество книг в наличии: </strong></td><td>{{object.quantity}}</td>
-        </tr>
+        </tr>       
         <tr>
             <td><strong>Активный (доступен для заказа, Да/Нет): </strong></td><td>{{object.active}}</td>
         </tr>
+        {% endif %}
         <tr>
             <td><strong>Рейтинг (0 - 10): </strong></td><td>{{object.rating}}</td>
         </tr>
+        {% if user.is_staff %}
         <tr>
             <td><strong>Дата создания: </strong></td><td>{{object.created}}</td>
         </tr>
         <tr>
             <td><strong>Дата изменения: </strong></td><td>{{object.modified}}</td>
         </tr>
+        {% endif %}
     </table>
-    <a href="{% url 'book:cards' %}" class="btn btn-success">Назад</a></p>
+    <a href="{% url 'book:cards' %}" class="btn btn-success">К каталогу</a></p>
 </div>
 {% endblock %}

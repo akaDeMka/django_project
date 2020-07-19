@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block  title %}BookShop - проводник в гавань новых миров{% endblock  %}
+{% block content %}
+<div class='container'>
+<h1> Список объектов </h1>
+<ul class="navbar-nav">
+    <li class="nav-item active"><a href="{% url 'author:list' %}">Авторы </a></li>
+    <li class="nav-item active"><a href="{% url 'book:list' %}">Книги </a></li>
+    <li class="nav-item active"><a href="{% url 'genre:list' %}">Жанры </a></li>
+    <li class="nav-item active"><a href="{% url 'publisher:list' %}">Издательства </a></li>
+    <li class="nav-item active"><a href="{% url 'series:list' %}">Серия </a></li>
+</ul>
+</div>
+
+{% endblock  %}
