@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block  title %}Выход из аккаунта{% endblock  %}
+{% block content %}
+<div class="container">
+<br>
+<p>Вы успешно вышли из аккаунта.</p>
+<p><a href="{% url 'account:login' %}"> Войти снова </a> </p>
+</div>
+{% endblock  %}
