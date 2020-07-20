@@ -10,4 +10,6 @@ urlpatterns = [
     path('logout/', views.LogOutMe.as_view(), name="logout"),
     path('<int:pk>-update/', views.EditAccount.as_view(), name="update"),
     path('create-account/', views.CreateNewAccount.as_view(), name="create"),
+    path('reset_password/', views.MyPasswordReset.as_view(), name="password_reset"),
+    path('reset_password-done/', views.MyPasswordResetConfirm.as_view(), name="password_reset_confirm"),
 ]
