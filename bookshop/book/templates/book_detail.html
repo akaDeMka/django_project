@@ -4,8 +4,8 @@
 {% block content %}
 <div class='container'>
     <h1> {{ object }}</h1>
-    <p><img src="{{object.image.url}}" style="max-width:30%" align="left" hspace=30>
-    <p>{{object.description}} <p>
+    <p><img src="{{object.image.url}}" style="max-width:30%" align="left" hspace=30></p>
+    <p>{{object.description}} </p>
     <h4>Цена (BYN): {{object.price}}</h4><br>
     <h4>{% for author in object.authors.all %}{{ author }} {% endfor %}</h4>    
     <table>
@@ -66,6 +66,6 @@
         </tr>
         {% endif %}
     </table>
-    <a href="{% url 'book:cards' %}" class="btn btn-success">К каталогу</a></p>
+    <p><a href="{% url 'book:cards' %}" class="btn btn-success">К каталогу</a></p>
 </div>
 {% endblock %}

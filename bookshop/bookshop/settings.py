@@ -143,3 +143,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = reverse_lazy('account:login')
 LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

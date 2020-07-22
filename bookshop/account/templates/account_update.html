@@ -3,7 +3,7 @@
 {% block  title %}JОбновить аккаунт{% endblock  %}
 {% block content %}
 <div class="container">
-    <p></p>
+    <br>
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
@@ -13,7 +13,10 @@
         {{form|crispy}}
         <input type="submit" value="Обновить аккаунт" class="btn btn-success">
     </form>
-    <input type="submit" value="Назад" class="btn">
+    <br>
+    <p><a href="{% url 'account:change_password' %}" class="btn btn-danger">Сменить пароль</a></p>
+    <br>
+    <p><a href="/" class="btn btn-secondary">На главную</a></p>
 
 </div>
 {% endblock  %}
