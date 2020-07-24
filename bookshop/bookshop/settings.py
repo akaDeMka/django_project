@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     # My apps
+    'phonenumber_field',
     'genre',
     'book',
     'main',
