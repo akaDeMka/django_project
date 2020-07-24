@@ -7,9 +7,8 @@ def create_profile(sender, instance, created, **kwargs):
         defaults={},
     )
     if created:
-        obj, created = Group.objects.get_or_create(
-        name='Customer',
-        defaults={},
-        )
-        my_group = Group.objects.get(name='Customer')
+        try:
+            my_group = Group.objects.get(name='Customer')
+        except:
+            my_group = Group.objects.create(name='Customer')
         my_group.user_set.add(instance)
